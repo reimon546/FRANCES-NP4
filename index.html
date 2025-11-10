@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Catalogo de citas</title>
+
+  <script>
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (!isMobile) {
+      window.location.href = "https://www.google.com";
+    }
+  </script>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) || (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  </script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <meta property="og:image" content="https://i.postimg.cc/rwXk6KNf/photo-5080140305176571628-x.jpg">
+  <link rel="shortcut icon" href="https://cdn.jmpcdn.com/assets/3420/images/2.ico" type="image/x-icon">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background-color: #000;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 15%;
+      z-index: 2;
+    }
+
+    .logo img {
+      max-width: 250px;
+      margin-bottom: 35px;
+      filter: drop-shadow(0 0 10px #fff);
+    }
+
+    .question-title {
+      font-size: 1.8rem;
+      margin: 30px 0;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .buttons-block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 380px;
+      z-index: 2;
+    }
+
+    .step-btn {
+      padding: 20px 28px;
+      background: linear-gradient(45deg, #1E90FF, #4682B4);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 18px rgba(30, 144, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 24px rgba(30, 144, 255, 0.7);
+    }
+
+    .step-btn span {
+      margin-left: 10px;
+    }
+
+    a.step-btn {
+      text-decoration: none;
+      display: block;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-container img.active {
+      opacity: 1;
+    }
+
+    @media (max-width: 480px) {
+      .question-title {
+        font-size: 1.4rem;
+      }
+
+      .step-btn {
+        font-size: 1.05rem;
+        padding: 18px 24px;
+      }
+
+      .buttons-block {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">
+      <img src="https://i.imgur.com/sZdtUEq.png" alt="Logo strony">
+    </div>
+
+    <div class="image-container">
+      <img src="https://i.postimg.cc/15bYL9wz/12127551-021-0e0c.jpg" class="active">
+      <img src="https://i.postimg.cc/bvhVw36c/89472663-007-9acc.jpg">
+      <img src="https://i.postimg.cc/SKfT2C5X/81420904-014-ed62.jpg">
+      <img src="https://i.postimg.cc/GhTXPZVn/14085738-003-c1f6.jpg">
+      <img src="https://i.postimg.cc/zGm0xxYb/12712514-007-f1d4.jpg">
+    </div>
+
+    <div class="step-block">
+      <div class="step-item" id="step1">
+        <div class="question-title">
+          Przyjeżdżamy do Ciebie w nocy, usługa dostępna w całym mieście. Chcesz zobaczyć mój katalog?
+        </div>
+        <div class="buttons-block">
+          <button class="step-btn" onclick="afficherEtape2()">😈 Tak, chcę zobaczyć</button>
+          <button class="step-btn" onclick="alert('Może innym razem!')">😞 Nie teraz</button>
+        </div>
+      </div>
+
+      <div class="step-item" id="step2" style="display: none;">
+        <div class="question-title">
+          UWAGA! Czy zgadzasz się szanować kobiety, które zobaczysz? Jeśli rozpoznasz którąkolwiek, nie mów nikomu i nie rozpowszechniaj plotek.
+        </div>
+        <div class="buttons-block">
+          <a href="https://searchfordating.com/tds/ae?tdsId=s2190pos_r&tds_campaign=s2190pos&s1=ps&utm_source=int&utm_sub=opnfnl&affid=1b48fff7&subid={Zeus}&subid2={subid2}&clickid={clickid}" class="step-btn">
+            ZGADZAM SIĘ I CHCĘ ZOBACZYĆ KATALOG
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function afficherEtape2() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+    }
+
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.image-container img');
+    const totalImages = images.length;
+
+    function changeImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalImages;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(changeImage, 2000);
+  </script>
+
+  <script id="_wau1ca">
+    var _wau = _wau || [];
+    _wau.push(["dynamic", "zeus23", "1ca", "ffffffffffff", "small"]);
+  </script>
+  <script async src="//waust.at/d.js"></script>
+</body>
+</html>
